@@ -43,7 +43,6 @@ student* getData(ifstream& file, int& studentCnt, int& testsCnt) {
 void calcAverage(student students[], int studentCnt, int testsCnt);
 
 //Returns letter grade from average test score.
-
 char getLetterGrade(double average) {
     if (average >= 90) return 'A';
     else if (average >= 80) return 'B';
