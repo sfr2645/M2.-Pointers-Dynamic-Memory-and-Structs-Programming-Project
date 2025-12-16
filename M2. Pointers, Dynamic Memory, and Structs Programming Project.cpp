@@ -1,5 +1,5 @@
 // M2. Pointers, Dynamic Memory, and Structs Programming Project.cpp : This file contains the 'main' function. Program execution begins and ends there.
-// This program implements the 
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -12,7 +12,7 @@ using namespace std;
 struct student {
     string name;
     int id;
-    double* testScores;  // dynamic array of tests
+    double* testScores;
     double average;
     char letterGrade;
 };
@@ -39,18 +39,11 @@ student* getData(ifstream& file, int& studentCnt, int& testsCnt) {
     return students;
 }
 
-/*
- * Calculates average test score and letter grade for each student.
- * Input: students array, studentCnt count, testsCnt count
- * Postcondition: updates average and letterGrade fields in each student struct
- */
+//Calculates average test score and letter grade for each student.
 void calcAverage(student students[], int studentCnt, int testsCnt);
 
-/*
- * Returns letter grade from average test score.
- * Input: average test score (double)
- * Output: letter grade (char)
- */
+//Returns letter grade from average test score.
+
 char getLetterGrade(double average) {
     if (average >= 90) return 'A';
     else if (average >= 80) return 'B';
@@ -59,17 +52,15 @@ char getLetterGrade(double average) {
     else return 'F';
 }
 
-/*
- * Prints a formatted report showing Student name, ID, average score, and letter grade.
- * Input: students array, studentCnt count
- */
+
+//Prints a formatted report showing Student name, ID, average score, and letter grade.
 void printReport(const student students[], int studentCnt);
 
 int main() {
-    ifstream inputFile("grades.txt");
+    ifstream inputFile("student_data.txt");
 
     if (!inputFile) {
-        cerr << "Error: could not open file grades.txt" << endl;
+        cerr << "Error: could not open file student_data.txt" << endl;
         return 1;
     }
 
